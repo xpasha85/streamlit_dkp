@@ -76,10 +76,16 @@ expander_pts = st.expander('Данные транспортного средст
 with expander_pts:
     ecol1, ecol2, ecol7 = st.columns(3)
     with ecol1:
-        br_mod = st.text_input('Марка, модель ТС:', value=f'{epts.brand} {epts.model}')
-        if epts.brand and epts.model:
+        if is_ok_pts:
+            br_mod = st.text_input('Марка, модель ТС:', value=f'{epts.brand} {epts.model}')
+        else:
+            br_mod = st.text_input('Марка, модель ТС:')
+        if len(br_mod.split()) > 1:
             epts.brand = br_mod.split()[0].upper()
             epts.model = ' '.join(br_mod.split()[1:]).upper()
+        else:
+            st.warning('Поле должно содержать минимум 2 слова.')
+        st.text(f'{epts.brand} {epts.model}')
     with ecol2:
         epts.vin = st.text_input('Идентификационный номер (VIN):', value=epts.vin).upper()
     with ecol7:
