@@ -10,6 +10,12 @@ import my_classes
 from my_classes import Person, Passport
 
 st.set_page_config(page_title='Бланк ДКП', page_icon='📝')
+hide_menu_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        </style>
+        """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 # st.header('Бланк ДКП')
 
 # --------- Шапка договора -----------------------
