@@ -91,7 +91,7 @@ with expander_pts:
             epts.model = ' '.join(br_mod.split()[1:]).upper()
         else:
             st.warning('Поле должно содержать минимум 2 слова.')
-        st.text(f'{epts.brand} {epts.model}')
+        #  st.text(f'{epts.brand} {epts.model}')
     with ecol2:
         epts.vin = st.text_input('Идентификационный номер (VIN):', value=epts.vin).upper()
     with ecol7:
