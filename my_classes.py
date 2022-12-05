@@ -157,7 +157,7 @@ def make_dkp_docx(data: date, place: str, seller: Person, buyer: Person, epts: E
                'epts_no': epts.number,
                'epts_kem': epts.organisation,
                'epts_d': str(epts.data.day),
-               'epts_m': months[data.month-1],
+               'epts_m': months[epts.data.month-1],
                'epts_y': str(epts.data.year),
                'summa': summa
                }
